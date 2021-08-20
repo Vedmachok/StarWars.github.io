@@ -1,0 +1,103 @@
+﻿.section-blog {
+    background-color: $color-fon;
+
+
+    margin {
+        top: $size-zero;
+        bottom: $size-zero;
+    }
+}
+
+.section-blog h1 {
+    background-color:$color-fon;
+    text-align:center;
+    margin {
+        top: $size-main*4;
+        bottom: $size-main*4;
+    }
+    color:$color-dark;
+    font-size:3em;
+    font-family:$font-main;
+}
+.blog {
+    &-main {
+        grid-template-columns: repeat(4,1fr);
+        grid-gap: $size-main*2;
+        font-family: $font-second;
+        background-color: $color-fon;
+    }
+
+    &-item {
+        background-color: lighten($color-fon,40%);
+        text-decoration: none;
+        grid-template-rows: 1fr 1fr;
+        transition: background-color 0.5s ease;
+        overflow: hidden;
+        color: $color-dark;
+
+        &:hover {
+            background-color: lighten($color-dark, 50%);
+        }
+
+        &-img {
+            height: $size-width*2.5+px;
+            background-size: cover;
+            background-position: $position;
+            transition: transform 0.5s ease;
+
+            &:hover {
+                transform: scale(1.1) translateY(-12px);
+            }
+        }
+
+        &-content {
+            padding: $size-main*2;
+            text-align: $position;
+            align-content: $position;
+
+            h4 {
+                font-size: $size-main*2;
+                line-height: 1.5;
+                margin: $size-zero;
+            }
+
+            p {
+                margin: {
+                    top: $size-main*2;
+                    bottom: $size-zero;
+                }
+            }
+        }
+
+        &:nth-child(3) {
+            grid-column: 3/5;
+        }
+
+        &:nth-child(4) {
+            grid-column: 1/3;
+        }
+    }
+}
+.frame {
+    position: relative;
+    display: block;
+    width: $size-widthper;
+    padding: $size-zero;
+    overflow: hidden;
+
+    &-item {
+        position:relative;
+        top: $size-zero;
+        left: $size-zero;
+        border: $size-zero;
+        width: $size-widthper;
+        height: $size-widthper;
+        border:none;        
+    }
+}
+.btn-blog {
+    grid-column: 1/5;
+    text-align: $position;
+    
+}
+
